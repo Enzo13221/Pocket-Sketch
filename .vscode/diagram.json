@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "author": "codex",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": -10,
+      "left": -40,
+      "attrs": { "env": "micropython" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled",
+      "top": -170,
+      "left": 210,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-ky-040",
+      "id": "enc1",
+      "top": 210,
+      "left": -240,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ky-040",
+      "id": "enc2",
+      "top": 210,
+      "left": 70,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    ["pico:GP0", "oled:SDA", "green", ["v0"]],
+    ["pico:GP1", "oled:SCL", "green", ["v0"]],
+    ["pico:3V3", "oled:VCC", "red", ["v0"]],
+    ["pico:GND.1", "oled:GND", "black", ["v0"]],
+
+    ["pico:GP2", "enc1:CLK", "blue", ["v0"]],
+    ["pico:GP3", "enc1:DT", "blue", ["v0"]],
+    ["pico:GP4", "enc1:SW", "blue", ["v0"]],
+    ["pico:3V3", "enc1:VCC", "red", ["v0"]],
+    ["pico:GND.2", "enc1:GND", "black", ["v0"]],
+
+    ["pico:GP5", "enc2:CLK", "orange", ["v0"]],
+    ["pico:GP6", "enc2:DT", "orange", ["v0"]],
+    ["pico:GP7", "enc2:SW", "orange", ["v0"]],
+    ["pico:3V3", "enc2:VCC", "red", ["v0"]],
+    ["pico:GND.3", "enc2:GND", "black", ["v0"]]
+  ]
+}
