@@ -11,11 +11,11 @@
       "attrs": { "env": "micropython" }
     },
     {
-      "type": "board-ssd1306",
-      "id": "oled",
-      "top": -170,
-      "left": 210,
-      "attrs": { "i2cAddress": "0x3c" }
+      "type": "wokwi-ili9341",
+      "id": "tft",
+      "top": -240,
+      "left": 190,
+      "attrs": { "rotation": "90" }
     },
     {
       "type": "wokwi-ky-040",
@@ -33,10 +33,13 @@
     }
   ],
   "connections": [
-    ["pico:GP0", "oled:SDA", "green", ["v0"]],
-    ["pico:GP1", "oled:SCL", "green", ["v0"]],
-    ["pico:3V3", "oled:VCC", "red", ["v0"]],
-    ["pico:GND.1", "oled:GND", "black", ["v0"]],
+    ["pico:GP18", "tft:SCK", "green", ["v0"]],
+    ["pico:GP19", "tft:MOSI", "green", ["v0"]],
+    ["pico:GP16", "tft:MISO", "purple", ["v0"]],
+    ["pico:GP20", "tft:D/C", "orange", ["v0"]],
+    ["pico:GP17", "tft:CS", "blue", ["v0"]],
+    ["pico:3V3", "tft:VCC", "red", ["v0"]],
+    ["pico:GND.1", "tft:GND", "black", ["v0"]],
 
     ["pico:GP2", "enc1:CLK", "blue", ["v0"]],
     ["pico:GP3", "enc1:DT", "blue", ["v0"]],
